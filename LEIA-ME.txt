@@ -1,0 +1,15 @@
+PRIME HOUSE ASSESSORIA — PACOTE PARA PUBLICAÇÃO
+
+Conteúdo:
+- index.html: página principal
+- style.css: estilos para computador e celular
+- assets/: logos e fotografia utilizados na página
+
+Publicação:
+1. Descompacte o arquivo ZIP.
+2. Envie todo o conteúdo da pasta prime-house-site para a pasta pública da hospedagem.
+3. Mantenha a estrutura e os nomes dos arquivos.
+4. Configure o domínio para apontar para a pasta que contém o index.html.
+
+Não há banco de dados nem instalação de dependências. A página é estática.
+Os links de e-mail e WhatsApp já estão configurados.
