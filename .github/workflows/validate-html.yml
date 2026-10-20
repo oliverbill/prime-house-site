@@ -1,0 +1,31 @@
+name: Validar site apos commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Conferir que o CNAME nao foi removido ou alterado
+        run: |
+          if [ ! -f CNAME ]; then
+            echo "::error::Arquivo CNAME nao encontrado. O dominio customizado do GitHub Pages pode quebrar."
+            exit 1
+          fi
+          if [ "$(cat CNAME)" != "primehouse.srv.br" ]; then
+            echo "::error::CNAME contem valor inesperado: $(cat CNAME)"
+            exit 1
+          fi
+
+      - name: Validar HTML
+        uses: anishathalye/proof-html@v2
+        with:
+          directory: .
+          check_html: true
+          check_favicon: false
+          swap_urls: ""
