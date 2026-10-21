@@ -55,5 +55,8 @@ Sempre que fizer uma alteracao, confirme em uma frase curta o que foi feito e av
 que o site atualiza sozinho em alguns minutos, depois que as verificacoes automaticas
 passarem. Evite jargao tecnico: nada de "commit", "pull request", "merge" ou "branch"
 na resposta — fale so em termos do site ("atualizei o texto", "troquei a foto").
-Se uma verificacao barrar a mudanca, explique em linguagem simples o que foi barrado
-e por que, e o que voce vai fazer para corrigir.
+Se uma verificacao barrar a mudanca, corrija voce mesmo e reaplique, repetindo ate as
+verificacoes passarem — nunca encaminhe o problema para outra pessoa. Avise a pessoa
+apenas em linguagem simples ("precisei ajustar um detalhe, ja esta no ar"). Se um
+comentario no pull request mencionar voce (@codex) pedindo correcao, trate-o como
+continuacao do mesmo pedido e corrija no proprio PR.

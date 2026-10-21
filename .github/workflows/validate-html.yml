@@ -68,3 +68,26 @@ jobs:
             esac
           done
           exit $status
+
+  pedir-correcao:
+    name: Pedir correcao ao Codex
+    if: failure() && github.event_name == 'pull_request'
+    needs: [cname, html, allowlist]
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Comentar no PR pedindo que o Codex corrija (max 3 tentativas)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          tentativas=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq '[.[] | select(.body | contains("@codex") and contains("validacao falhou"))] | length')
+          if [ "$tentativas" -ge 3 ]; then
+            gh pr comment "$PR" --repo "$REPO" --body "A validacao falhou 3 vezes seguidas neste PR. Parando as tentativas automaticas de correcao."
+            exit 0
+          fi
+          gh pr comment "$PR" --repo "$REPO" --body "@codex a validacao falhou neste PR. Veja os erros apontados pelos checks em $RUN_URL e corrija, atualizando este mesmo PR ate todos os checks passarem. Lembretes: o CNAME nao pode ser alterado, e somente index.html, style.css, robots.txt, sitemap.xml e assets/ podem ser editados."
