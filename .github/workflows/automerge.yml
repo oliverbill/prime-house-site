@@ -1,0 +1,21 @@
+name: Auto-merge de PRs validados
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review, synchronize]
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    name: Habilitar auto-merge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ativar auto-merge (o merge so acontece quando os checks obrigatorios passarem)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge --auto --squash "${{ github.event.pull_request.html_url }}"

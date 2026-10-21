@@ -1,12 +1,16 @@
-name: Validar site apos commit
+name: Validar site
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  validate:
+  cname:
+    name: Conferir CNAME
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -22,6 +26,12 @@ jobs:
             exit 1
           fi
 
+  html:
+    name: Validar HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
       - name: Validar HTML
         uses: anishathalye/proof-html@v2
         with:
@@ -29,3 +39,32 @@ jobs:
           check_html: true
           check_favicon: false
           swap_urls: ""
+
+  allowlist:
+    name: Arquivos permitidos
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    steps:
+      - name: Conferir que o PR so altera arquivos da lista permitida
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          arquivos=$(gh api "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files" --paginate --jq '.[].filename')
+          status=0
+          for f in $arquivos; do
+            case "$f" in
+              CNAME)
+                echo "::error::O CNAME controla o dominio do site e nao pode ser alterado por PR."
+                status=1
+                ;;
+              index.html|style.css|robots.txt|sitemap.xml|assets/*)
+                ;;
+              *)
+                echo "::error::Arquivo fora da lista permitida para edicao via PR: $f"
+                status=1
+                ;;
+            esac
+          done
+          exit $status
