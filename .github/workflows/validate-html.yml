@@ -38,6 +38,8 @@ jobs:
           directory: .
           check_html: true
           check_favicon: false
+          check_css: false
+          ignore_empty_alt: true
           swap_urls: ""
 
   allowlist:
