@@ -25,6 +25,25 @@
     @media (max-width: 620px) {
       .article-header .eyebrow, .article-header h1, .service-detail h2, .article-cta h2 { font-size: 15px; }
     }
+  
+    /* Alinhamento único para abertura, navegação e conteúdo dos serviços. */
+    .article-header { padding: 4.5rem 0 3rem; }
+    .article-header > div, .article-nav, .article-main { width: min(960px, 86vw); max-width: none; margin-left: auto; margin-right: auto; }
+    .article-nav { padding: 1rem 0; font-size: .84rem; line-height: 1.5; }
+    .article-main { padding: 3rem 0; }
+    .article-header h1, .article-header p, .service-detail p { max-width: none; }
+    .article-header h1, .service-detail h2, .article-cta h2 { line-height: 1.3; }
+    .article-header p:not(.eyebrow), .service-detail p { font-size: 16px; line-height: 1.8; }
+    .article-header .eyebrow { margin-bottom: 1.7rem; }
+    .service-detail { padding: 2rem 0; scroll-margin-top: 110px; }
+    @media (max-width: 620px) {
+      .article-header { padding: 3rem 0 2.25rem; }
+      .article-header > div, .article-nav, .article-main { width: 88vw; }
+      .article-main { padding: 2.25rem 0; }
+      .article-header p:not(.eyebrow) { font-size: .94rem; line-height: 1.7; }
+      .article-nav { gap: .75rem 1rem; }
+      .article-cta { padding: 1.5rem; }
+    }
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Assessoria para empregadores domésticos","provider":{"@type":"ProfessionalService","name":"Prime House Assessoria","url":"https://primehouse.srv.br/"},"areaServed":"BR","url":"https://primehouse.srv.br/servicos.html","description":"Assessoria para eSocial Doméstico, folha de pagamento, guia DAE, férias, 13º salário, admissão e rescisão."}</script>
 </head>
