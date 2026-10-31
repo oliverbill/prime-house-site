@@ -20,7 +20,17 @@
     .article-header{padding:5rem 7vw 3rem;background:var(--cream)}.article-header>div,.article-main{max-width:960px;margin:auto}.article-header h1{max-width:790px;color:var(--wine-deep);font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin:0 0 1.25rem}.article-header p{max-width:710px;color:#665a60;line-height:1.8;font-size:1.05rem}.article-nav{display:flex;gap:1.25rem;flex-wrap:wrap;padding:1rem 7vw;border-bottom:1px solid var(--line);font-weight:700;color:var(--wine)}.article-main{padding:4rem 7vw}.service-detail{padding:2rem 0;border-bottom:1px solid var(--line)}.service-detail:first-child{padding-top:0}.service-detail h2{color:var(--wine-deep);font-size:2rem;margin:0 0 .75rem}.service-detail p{color:#65575e;line-height:1.8;max-width:760px}.service-detail ul{color:#65575e;line-height:1.8;padding-left:1.2rem}.article-cta{margin-top:3rem;padding:2.25rem;background:var(--wine);color:#fff}.article-cta h2{margin-top:0;font-size:2rem}.article-cta p{line-height:1.7;color:#f3e9ed}.article-cta a{display:inline-block;margin-top:.8rem;padding:.85rem 1.1rem;background:#fff;color:var(--wine);font-weight:800}@media(max-width:980px){.site-header.page-header{height:auto;min-height:80px;grid-template-columns:1fr auto}.site-header.page-header .page-navigation{display:flex;grid-column:1/-1;grid-row:2;justify-content:flex-start;gap:1.1rem;flex-wrap:wrap;padding-bottom:1rem}.site-header.page-header .header-cta{grid-column:2;grid-row:1}}@media(max-width:620px){.article-header{padding:3.5rem 6vw 2.25rem}.article-main{padding:3rem 6vw}.article-header h1{font-size:2.2rem}.service-detail h2{font-size:1.6rem}}
   
     @media (min-width: 621px) { .article-header h1, .service-detail h2, .article-cta h2 { font-size: 27px; } }
-  </style>
+  /* Prévia da imagem de atendimento na abertura dos serviços. */
+.article-header > div { max-width: 1200px; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 3rem; align-items: center; }
+.article-header .article-intro { min-width: 0; }
+.services-preview-photo { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 16px; }
+@media (max-width: 980px) { .article-header > div { grid-template-columns: 1fr; gap: 2rem; } .services-preview-photo { max-width: 680px; } }
+
+@media (min-width: 981px) {
+  .article-header .services-preview-photo { grid-column: 1; grid-row: 1; }
+  .article-header .article-intro { grid-column: 2; grid-row: 1; }
+}
+</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Assessoria para empregadores domésticos","provider":{"@type":"ProfessionalService","name":"Prime House Assessoria","url":"https://primehouse.srv.br/"},"areaServed":"BR","url":"https://primehouse.srv.br/servicos.html","description":"Assessoria para eSocial Doméstico, folha de pagamento, guia DAE, férias, 13º salário, admissão e rescisão."}</script>
 </head>
 <body>
@@ -30,7 +40,7 @@
     <a class="header-cta" href="https://wa.me/5511999800575?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20a%20assessoria%20da%20Prime%20House." target="_blank" rel="noreferrer">Fale conosco</a>
   </header>
   <main>
-    <section class="article-header"><div><p class="eyebrow"><span></span> Serviços</p><h1>Gestão da rotina trabalhista do seu lar, com clareza e acompanhamento.</h1><p>A Prime House apoia empregadores domésticos em cada etapa da relação de trabalho. Organizamos obrigações, prazos e documentos para que as decisões sejam mais tranquilas e seguras.</p></div></section>
+    <section class="article-header"><div><div class="article-intro"><p class="eyebrow"><span></span> Serviços</p><h1>Gestão da rotina trabalhista do seu lar, com clareza e acompanhamento.</h1><p>A Prime House apoia empregadores domésticos em cada etapa da relação de trabalho. Organizamos obrigações, prazos e documentos para que as decisões sejam mais tranquilas e seguras.</p></div><img class="services-preview-photo" src="assets/assessoria-atendimento.png" width="1536" height="1024" alt="Imagem ilustrativa de uma assessora orientando uma cliente sobre documentos."></div></section>
     <nav class="article-nav" aria-label="Links de serviços"><a href="#esocial">eSocial e DAE</a><a href="#folha">Folha de pagamento</a><a href="#ferias">Férias e 13º</a><a href="#admissao">Admissão e rescisão</a><a href="perguntas-frequentes.html">Ver dúvidas frequentes</a></nav>
     <article class="article-main">
       <section class="service-detail" id="esocial"><h2>eSocial Doméstico e guia DAE</h2><p>Acompanhamos a rotina do eSocial Doméstico e a emissão da guia DAE, para que as informações sejam organizadas e os vencimentos não passem despercebidos. Em caso de dúvidas ou alterações na rotina, orientamos sobre os próximos passos.</p></section>
