@@ -459,3 +459,8 @@ footer { padding: 4rem 7vw 1.5rem; display: grid; grid-template-columns: 1.2fr 1
 }
 
 [hidden] { display: none !important; }
+
+/* Títulos com tracinho: 20 px apenas no computador. */
+@media (min-width: 981px) {
+  .eyebrow, .hero .eyebrow, .process .eyebrow { font-size: 20px; }
+}
