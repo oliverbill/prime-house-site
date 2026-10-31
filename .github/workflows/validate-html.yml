@@ -40,7 +40,7 @@ jobs:
           check_favicon: false
           check_css: false
           ignore_empty_alt: true
-          ignore_url: "https://www.instagram.com/primehouseassessoria"
+          ignore_url_re: "^https://www\\.instagram\\.com/primehouseassessoria/?$"
           swap_urls: ""
 
   allowlist:
