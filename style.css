@@ -492,3 +492,7 @@ footer { padding: 4rem 7vw 1.5rem; display: grid; grid-template-columns: 1.2fr 1
     font-size: 15px;
   }
 }
+
+/* Títulos em 15 px e subtítulos em 20 px em todas as telas. */
+.eyebrow, .hero .eyebrow, .process .eyebrow { font-size: 15px; }
+.hero h1, .statement blockquote, .section-heading h2, .services .section-heading h2, .about h2, .process .section-heading h2, .final-cta h2 { font-size: 20px; }
