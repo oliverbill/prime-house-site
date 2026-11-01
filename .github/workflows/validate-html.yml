@@ -64,6 +64,8 @@ jobs:
                 ;;
               index.html|style.css|robots.txt|sitemap.xml|assets/*)
                 ;;
+              package.json|package-lock.json|playwright.config.js|tests/*|.github/workflows/*)
+                ;;
               *)
                 echo "::error::Arquivo fora da lista permitida para edicao via PR: $f"
                 status=1

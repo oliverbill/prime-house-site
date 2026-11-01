@@ -1,0 +1,13 @@
+{
+  "name": "prime-house-site-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Testes de regressão (links e menus) do site estático prime-house-site",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "http-server": "^14.1.1"
+  }
+}
