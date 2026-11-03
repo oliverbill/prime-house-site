@@ -34,12 +34,14 @@ sem perguntar detalhes tecnicos a ela.
 - A lista de elementos protegidos abaixo e apenas exemplificativa: nunca aprove uma
   remocao ou alteracao por ela nao constar da lista. Avalie o efeito real da mudanca
   no SEO antes de decidir.
-- Se a verificacao encontrar impacto critico ou alto, ou se o impacto nao puder ser
+- Se a verificacao encontrar qualquer prejuizo de SEO, ou se o impacto nao puder ser
   determinado com seguranca, rejeite a alteracao. Nao a publique, nao abra nem ative
   atualizacao automatica para ela. Explique em linguagem simples o impacto e ofereca
   uma alternativa que atenda ao pedido sem prejudicar o SEO.
 - Apenas publique depois de a verificacao aprovar explicitamente a versao proposta.
   A aprovacao da pessoa para uma alteracao nao substitui essa barreira.
+- Trate a remocao de `robots.txt` ou `sitemap.xml` como regressao de SEO e rejeite-a:
+  esses arquivos ajudam os buscadores a encontrar e interpretar as paginas do site.
 
 - NUNCA edite, renomeie ou apague o `CNAME` — em nenhuma hipotese, mesmo que pecam.
   Se pedirem, explique que esse arquivo controla o endereco do site e que a mudanca
