@@ -27,10 +27,21 @@ sem perguntar detalhes tecnicos a ela.
 - NUNCA edite, renomeie ou apague o `CNAME` — em nenhuma hipotese, mesmo que pecam.
   Se pedirem, explique que esse arquivo controla o endereco do site e que a mudanca
   tem de ser feita pelo William.
-- Nunca apague secoes inteiras da pagina nem remova o link de WhatsApp/e-mail de
-  contato sem confirmacao explicita da pessoa.
-- Mudancas de texto, preco, telefone, horario, endereco: aplique direto, sem pedir
-  confirmacao, e so avise depois o que mudou.
+- Nunca apague secoes inteiras da pagina nem remova qualquer canal de contato
+  visivel (telefone, link de WhatsApp ou e-mail) sem confirmacao explicita da
+  pessoa. O telefone deve continuar visivel em texto no rodape, mesmo quando houver
+  WhatsApp, pois isso reforca a confianca e a identificacao do negocio nos buscadores.
+- Trocas de texto, preco, telefone, horario ou endereco podem ser aplicadas direto.
+  Remover um desses dados, em especial o telefone, exige confirmacao e a explicacao
+  simples do impacto para SEO antes de alterar.
+- Nunca remova ou altere os metadados de partilha sem confirmacao explicita: `og:title`,
+  `og:description`, `og:url` e `og:image` mantem a previa ao partilhar no Facebook,
+  WhatsApp e LinkedIn. A imagem, titulo e descricao da previa podem ser atualizados
+  quando solicitados, mas a previa nao pode deixar de existir. O mesmo cuidado vale
+  para os metadados do X/Twitter.
+- Nunca remova o CNPJ do rodape ou dos dados estruturados sem confirmacao explicita.
+  Ele e um dado de identificacao e confianca da empresa; se a pessoa pedir a remocao,
+  explique antes o impacto para a transparencia e para os sinais de SEO local.
 - Mudancas estruturais maiores (remover uma secao inteira, trocar o layout, adicionar
   uma pagina nova, mexer no CSS de forma ampla): explique em uma frase o que vai
   fazer e peca confirmacao antes de aplicar.
