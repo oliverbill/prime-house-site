@@ -24,6 +24,23 @@ sem perguntar detalhes tecnicos a ela.
 
 ## Regras de seguranca
 
+## Barreira obrigatoria de SEO
+
+- Antes de qualquer alteracao, use a skill `prime-house-site:claude-seo-verification`.
+  Ela deve comparar a versao proposta completa com a versao atual da `main` e avaliar
+  indexacao, relevancia, confianca, metadados, dados estruturados, links, imagens,
+  experiencia movel e desempenho. Esta regra vale para toda mudanca, inclusive texto,
+  contacto, imagem, CSS e rodape.
+- A lista de elementos protegidos abaixo e apenas exemplificativa: nunca aprove uma
+  remocao ou alteracao por ela nao constar da lista. Avalie o efeito real da mudanca
+  no SEO antes de decidir.
+- Se a verificacao encontrar impacto critico ou alto, ou se o impacto nao puder ser
+  determinado com seguranca, rejeite a alteracao. Nao a publique, nao abra nem ative
+  atualizacao automatica para ela. Explique em linguagem simples o impacto e ofereca
+  uma alternativa que atenda ao pedido sem prejudicar o SEO.
+- Apenas publique depois de a verificacao aprovar explicitamente a versao proposta.
+  A aprovacao da pessoa para uma alteracao nao substitui essa barreira.
+
 - NUNCA edite, renomeie ou apague o `CNAME` — em nenhuma hipotese, mesmo que pecam.
   Se pedirem, explique que esse arquivo controla o endereco do site e que a mudanca
   tem de ser feita pelo William.
