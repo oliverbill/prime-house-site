@@ -475,7 +475,10 @@ footer { padding: 4rem 7vw 1.5rem; display: grid; grid-template-columns: 1.2fr 1
   .services .section-heading { align-items: start; }
 }
 
-/* Sobe o conjunto Soluções completas no computador. */
+/* Alinha Soluções completas à primeira linha da descrição. */
 @media (min-width: 981px) {
-  .services .section-heading > div { position: relative; top: -8px; }
+  .services .section-heading { align-items: start; }
+  .services .section-heading > div { position: relative; top: 0; }
+  .services .section-heading .eyebrow { margin-top: 0; line-height: 29.6px; }
+  .services .section-heading > p { margin-top: 0; line-height: 29.6px; }
 }
