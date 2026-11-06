@@ -475,7 +475,7 @@ footer { padding: 4rem 7vw 1.5rem; display: grid; grid-template-columns: 1.2fr 1
   .services .section-heading { align-items: start; }
 }
 
-/* Pequeno ajuste vertical da descrição dos serviços no computador. */
+/* Sobe o conjunto Soluções completas no computador. */
 @media (min-width: 981px) {
-  .services .section-heading > p { margin-top: 8px; }
+  .services .section-heading > div { position: relative; top: -8px; }
 }
